@@ -9,7 +9,7 @@ function logResponse(response, data) {
 }
 
 // 1. Login correcto
-fetch('http://127.0.0.1:8000/api/token/', {
+fetch('https://fundaci0n-backend-vgg8.onrender.com/api/token/', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ fetch('http://127.0.0.1:8000/api/token/', {
 .catch(error => console.error('Error:', error));
 
 // 2. Login incorrecto
-fetch('http://127.0.0.1:8000/api/token/', {
+fetch('https://fundaci0n-backend-vgg8.onrender.com/api/token/', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -37,12 +37,12 @@ fetch('http://127.0.0.1:8000/api/token/', {
 .catch(error => console.error('Error:', error));
 
 // 3. Acceso a endpoint protegido SIN token
-fetch('http://127.0.0.1:8000/api/users/me/')
+fetch('https://fundaci0n-backend-vgg8.onrender.com/api/users/me/')
 .then(response => response.json().then(data => logResponse(response, data)))
 .catch(error => console.error('Error:', error));
 
 // 4. Acceso con token válido (reemplaza 'TU_ACCESS_TOKEN_AQUI' con el token real del paso 1)
-fetch('http://127.0.0.1:8000/api/users/me/', {
+fetch('https://fundaci0n-backend-vgg8.onrender.com/api/users/me/', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer TU_ACCESS_TOKEN_AQUI'
@@ -52,7 +52,7 @@ fetch('http://127.0.0.1:8000/api/users/me/', {
 .catch(error => console.error('Error:', error));
 
 // 5. Acceso con token inválido
-fetch('http://127.0.0.1:8000/api/users/me/', {
+fetch('https://fundaci0n-backend-vgg8.onrender.com/api/users/me/', {
   method: 'GET',
   headers: {
     'Authorization': 'Bearer invalidtoken123'
@@ -62,7 +62,7 @@ fetch('http://127.0.0.1:8000/api/users/me/', {
 .catch(error => console.error('Error:', error));
 
 // 6. Refresh token (reemplaza 'TU_REFRESH_TOKEN_AQUI' con el token real)
-fetch('http://127.0.0.1:8000/api/token/refresh/', {
+fetch('https://fundaci0n-backend-vgg8.onrender.com/api/token/refresh/', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
