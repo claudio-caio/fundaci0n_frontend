@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { API_BASE_URL } from "../config/api";
 
 export default function Success() {
     const [params] = useSearchParams();
@@ -10,7 +11,7 @@ export default function Success() {
     useEffect(() => {
         if (!paymentId) return;
 
-        fetch(`/api/payments/status/${paymentId}/`)
+        fetch(`${API_BASE_URL}/payments/status/${paymentId}/`)
             .then(res => res.json())
             .then(data => setStatus(data.status));
     }, [paymentId]);

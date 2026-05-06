@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../../../config/api";
 import { HistoriaHeader } from "../historia/HistoriaHeader.tsx";
 import { HistoriaContent } from "../historia/HistoriaContent";
 import type { CasoExito } from "../types/TrayectoriaHistoria.types.ts";
@@ -15,7 +16,7 @@ function TrayectoriaHistoria() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`/api/trayectoria/casos/${id}/`)
+    fetch(`${API_BASE_URL}/trayectoria/casos/${id}/`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}`);

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../../config/api";
 import { CapacitacionesHeader } from "../components/CapacitacionesHeader.tsx";
 import { CapacitacionesList } from "../components/CapacitacionesList.tsx";
 
@@ -15,16 +16,25 @@ function Capacitaciones() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("/api/cursos/")
-      .then((res) => res.json())
-      .then((data) => {
+    async function loadCursos() {
+      try {
+        const res = await fetch(`${API_BASE_URL}/cursos/`);
+        const text = await res.text();
+
+        if (!res.ok) {
+          throw new Error(`Error fetching cursos: ${res.status} ${res.statusText} - ${text}`);
+        }
+
+        const data = JSON.parse(text);
         setCursos(data);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching cursos:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+
+    loadCursos();
   }, []);
 
   // Filtrar cursos solo por búsqueda

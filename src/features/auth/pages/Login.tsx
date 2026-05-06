@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_BASE_URL } from "../../../config/api";
 import fondoLogin from "../../../assets/fondo_login.jpeg";
 import CustomScrollbar from "../../../components/CustomScrollbar";
 
@@ -12,7 +13,7 @@ function Login() {
     setError("");
 
     try {
-      const response = await fetch("/api/users/login/", {
+      const response = await fetch(`${API_BASE_URL}/users/login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

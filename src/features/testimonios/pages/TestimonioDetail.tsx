@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../../config/api";
 import BackgroundImage from "../components/BackgroundImage";
 import BackButton from "../components/ui/BackButton";
 import ShareButtons from "../components/ui/ShareButtons";
@@ -27,7 +28,7 @@ const TestimonioDetail = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`/api/testimonios/${id}/`)
+    fetch(`${API_BASE_URL}/testimonios/${id}/`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}`);

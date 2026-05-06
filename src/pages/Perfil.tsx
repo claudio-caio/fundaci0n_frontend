@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../config/api";
 
 type User = {
   id: number;
@@ -22,7 +23,7 @@ function Perfil() {
     }
 
     // Obtener datos del usuario desde el backend
-    fetch("/api/users/me/", {
+    fetch(`${API_BASE_URL}/users/me/`, {
       method: "GET",
       headers: {
         "Authorization": `Token ${token}`,

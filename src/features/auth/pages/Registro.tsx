@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../../config/api";
 import fondoRegistro from "../../../assets/fondo_Registro.jpeg"; // Ajusta la ruta según tu estructura
 import CustomScrollbar from "../../../components/CustomScrollbar";
 
@@ -24,7 +25,7 @@ function Registro() {
     e.preventDefault();
     setError("");
 
-    fetch("/api/users/register/", {
+    fetch(`${API_BASE_URL}/users/register/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

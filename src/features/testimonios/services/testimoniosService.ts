@@ -19,12 +19,14 @@ export interface TestimonioResponse {
   rating?: number;
 }
 
+import { API_BASE_URL } from "../../../config/api";
+
 // Testimonios API service
 export const testimoniosService = {
   // Get all testimonios
   async getTestimonios(): Promise<Testimonio[]> {
     try {
-      const response = await fetch('/api/testimonios/');
+      const response = await fetch(`${API_BASE_URL}/testimonios/`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -38,7 +40,7 @@ export const testimoniosService = {
   // Get testimonio by ID
   async getTestimonioById(id: number): Promise<Testimonio> {
     try {
-      const response = await fetch(`/api/testimonios/${id}/`);
+      const response = await fetch(`${API_BASE_URL}/testimonios/${id}/`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

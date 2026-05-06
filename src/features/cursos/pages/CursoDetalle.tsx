@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../../config/api";
 import { CursoInfo } from "../components/CursoInfo";
 import { CursoInscripcion } from "../components/CursoInscripcion";
 
@@ -29,7 +30,7 @@ function CursoDetalle() {
 
     // 📥 Obtener curso
     useEffect(() => {
-        fetch(`/api/cursos/${id}/`)
+        fetch(`${API_BASE_URL}/cursos/${id}/`)
             .then((res) => res.json())
             .then((data) => setCurso(data))
             .catch((err) => {
@@ -48,7 +49,7 @@ const handleBuy = async () => {
     }
 
     try {
-        const res = await fetch("/api/payments/create/", {
+        const res = await fetch(`${API_BASE_URL}/payments/create/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

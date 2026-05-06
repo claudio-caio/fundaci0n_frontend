@@ -11,12 +11,14 @@ export interface ContactResponse {
   ok: string;
 }
 
+import { API_BASE_URL } from "../../../config/api";
+
 // Contact API service
 export const contactoService = {
   // Send contact form
   async sendContact(formData: ContactFormData): Promise<ContactResponse> {
     try {
-      const response = await fetch('/api/contacto/', {
+      const response = await fetch(`${API_BASE_URL}/contacto/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
