@@ -1,6 +1,6 @@
 import type { EnrolledCoursesResponse, CourseContentResponse, LessonDetailResponse } from '../types/learning';
 
-const API_BASE_URL = 'https://fundaci0n-backend-vgg8.onrender.com/api';
+const API_BASE_URL = 'https://fundaci0n-backend-63ij.onrender.com/api';
 
 export const learningService = {
   /**
