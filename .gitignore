@@ -43,3 +43,8 @@ Desktop.ini
 node_modules/
 dist/
 build/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
