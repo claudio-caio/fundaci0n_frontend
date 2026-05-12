@@ -8,7 +8,8 @@ import SpecializationBlock from "../components/SpecializationBlock";
 import FinalCTA from "../components/FinalCTA";
 
 // 📸 IMÁGENES - TEMPORALES (el cliente las reemplazará después)
-import logoFundacion from "../../../assets/logo_fundacion.jpg";
+import logoFundacion from "../../../assets/capacitacion-online-transformacion.webp";
+
 
 function Home() {
   useScrollAnimation();

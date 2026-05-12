@@ -1,4 +1,4 @@
-import fondoFooter from "../../assets/footer.jpeg";
+import fondoFooter from "../../assets/fundacion-capacitacion-logo-horizontal.webp";
 import { FooterContent } from "./FooterContent.tsx";
 
 function Footer() {
@@ -24,7 +24,7 @@ function Footer() {
       
       {/* Capa con gradiente MEJORADO - mantiene el contraste */}
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white/40"
+        className="absolute inset-0 bg-linear-to-b from-white/40 via-white/20 to-white/40"
       ></div>
 
       {/* Contenido del footer - relativo para estar por encima de la capa */}

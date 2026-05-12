@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo_fundacion.jpg";
+import logo from "../../assets/logo_fundacion_horizontal.webp";
 
 function Hero() {
   return (
